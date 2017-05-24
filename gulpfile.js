@@ -10,20 +10,15 @@ var elixir = require('laravel-elixir');
  |
  */
 
+//esto deberia ser mejorado con underscore
 elixir.config.assetsPath = '';
 elixir.config.css.folder = '';
+elixir.config.css.less.folder = '';
 elixir.config.js.folder = '';
 
 elixir(function(mix) {
 
 	mix
-
-		.styles([
-			'dist/css/bootstrap.css',
-			'dist/css/style.css',
-			'dist/css/cm-overlay.css',
-			'dist/css/font-awesome.css',
-		], 'dist/vendors/template.css')
 
 		.browserify('app.js', 'dist/js/app.js', 'src');
 		

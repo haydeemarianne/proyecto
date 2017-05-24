@@ -5,6 +5,7 @@
     "dev": "gulp watch"
   },
   "devDependencies": {
+    "bootstrap-less": "^3.3.8",
     "gulp": "^3.9.1",
     "laravel-elixir": "^5.0.0"
   },

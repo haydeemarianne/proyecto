@@ -9,6 +9,8 @@ function Modulo(angular, settings) {
     this.loadServices();
     this.loadDirectives();
     this.loadControllers();
+    this.loadFilters();
+    this.loadComponents();
 }
 
 Modulo.prototype = {
@@ -22,9 +24,11 @@ Modulo.prototype = {
 			dependencies: [],
 			services: [],
 			factories: [],
+			filters: [],
 			directives: [],
 			providers: [],
 			controllers: [],
+			components: [],
 			config: this.angular.noop,
 			run: this.angular.noop
 		}, settings);
@@ -77,6 +81,20 @@ Modulo.prototype = {
 		var _this = this;
 		this.attrs.controllers.forEach(function(controller) {
 			_this.modulo.controller(controller.name, controller.func);
+		});
+	},
+
+	loadFilters: function() {
+		var _this = this;
+		this.attrs.filters.forEach(function(filter) {
+			_this.modulo.filter(filter.name, filter.func);
+		});
+	},
+
+	loadComponents: function() {
+		var _this = this;
+		this.attrs.components.forEach(function(component) {
+			_this.modulo.component(component.name, component.def);
 		});
 	},
 

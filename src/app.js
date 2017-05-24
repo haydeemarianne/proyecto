@@ -1,27 +1,48 @@
 var angular = require('angular');
 var factory = require('./core/ModuleFactory');
+var LoaderState = require('./core/LoaderState');
 
 factory.create(angular, {
 	name: 'app',
 	dependencies: [
-		require('angular-bootstrap-npm')
+		require('angular-bootstrap-npm'),
+		require('angular-ui-router')
 	],
 	directives: [
-	
-		require('./directives/cv/cvMain'),
-		require('./directives/cv/cvNavigation'),
-		require('./directives/cv/cvAbout'),
-		require('./directives/cv/cvService'),
-		require('./directives/cv/cvExperiencia'),
-		require('./directives/cv/cvFooter'),
-		require('./directives/cv/cvLenguajes'),
-		require('./directives/cv/cvAptitudes'),
+		require('./directives/loginForm'),
+		require('./directives/navbar'),
+		require('./directives/sidebar'),
+		require('./directives/contentPage'),
+		require('./directives/createInicidenciaForm'),
+		require('./directives/mainLayout'),
+		require('./directives/incidenciaItem'),
+		require('./directives/mostrarDetalleIncidenciaForm'),
+		require('./directives/analistaItemList')
+	],
+	services: [
+		require('./factories/IncidenciaFactory'),
+	],
+	factories: [
+		require('./core/ServerFake'),
+		require('./repositories/IncidenciaRepo'),
+		require('./services/addFechaToCollecionIncidencia'),
+		require('./services/AsignarAnalistaToInicidenciaHandler')
+	],
+	components: [
+		
+	],
+	config: function($stateProvider) {
 
-		require('./directives/utils/cutParrafo'),
-		require('./directives/utils/herramientaHelper'),
-		require('./directives/utils/linkScroll'),
-		require('./directives/utils/experienciaHelper'),
-		require('./directives/utils/descripcionExperiencia'),
-		require('./directives/utils/habilidad')
-	]
+		var states = [
+
+			require('./states/initial'),
+			require('./states/crearIncidencia'),
+			require('./states/mostrarIncidenciasReporter'),
+			require('./states/mostrarDetallesIncidencia')
+
+		];
+
+		LoaderState.load(states, $stateProvider);
+
+	}
 });

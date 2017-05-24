@@ -1,0 +1,39 @@
+<style>
+    .col-xs-6 span:first-child {
+        font-weight: bold;
+        text-decoration: underline;
+        margin-right: 4px;
+    }
+
+    .list-group-item {
+        margin-bottom: 4px;
+        opacity: .5;
+    }
+
+    .list-group-item:hover {
+        cursor: pointer;
+        border: 1px solid white;
+        opacity: 1
+    }
+
+</style>
+
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Lista de Analistas</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    
+    <ul class="list-group">
+        <analista-item-list
+            ng-repeat="analista in analistas track by analista.id"
+            on-select="ok(analista)"
+            analista="analista">
+        </analista-item-list>
+    </ul>
+
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>
