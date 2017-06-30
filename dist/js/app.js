@@ -47019,7 +47019,7 @@ function mainLayout() {
 		},
 		controller: function controller($scope) {},
 		transclude: true,
-		template: '\n\t\t<div>\n\t\t\t<navbar></navbar>\n\t\t    <div class="container-fluid">\n\t\t      <div class="row">\n\t\t        <sidebar></sidebar>\n\t\t       \t<content-page title="{{title}}">\n\t\t       \t\t<ng-transclude></ng-transclude>\n\t\t       \t</content-page>\n\t\t      </div>\n\t\t    </div>\n\t    </div>\n\t\t'
+		template: '\n\t\t<div>\n\t\t <navbar></navbar>\n\t\t    <div class="container-fluid">\n\t\t      <div class="row">\n\t\t        <sidebar></sidebar>\n\t\t          <div class="logo" style="position: absolute; right: 5%; padding: 10px;">\n\t\t\t\t\t\t<img src="./dist/images/logos.png" alt="logo ind" height="50" width="100">\n\t\t\t\t\t</div>\n\t\t       \t<content-page title="{{title}}">\n\t\t       \t\n\t\t       \t\t<ng-transclude></ng-transclude>\n\t\t       \t</content-page>\n\t\t      </div>\n\t\t    </div>\n\t    </div>\n\t\t'
 	};
 }
 
@@ -47132,7 +47132,7 @@ module.exports = {
 function navbar() {
 		return {
 				controller: function controller() {},
-				template: '\n\t\t<nav class="navbar navbar-inverse navbar-fixed-top">\n\t  \t\t<div class="container-fluid">\n\n\t\t        <div class="navbar-header">\n\t\t          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">\n\t\t            <span class="sr-only">Toggle navigation</span>\n\t\t            <span class="icon-bar"></span>\n\t\t            <span class="icon-bar"></span>\n\t\t            <span class="icon-bar"></span>\n\t\t          </button>\n\t\t          <a class="navbar-brand" href="#">Helpdesk</a>\n\t\t        </div>\n\n\t\t        <div id="navbar" class="navbar-collapse collapse">\n\n\t\t          <ul class="nav navbar-nav navbar-right">\n\t\t            <li><a href="#">Logout</a></li>\n\t\t          </ul>\n\n\n\t\t        </div>\n\n\t\t      </div>\n\t    </nav>\n\t\t'
+				template: '\n\t\t<nav class="navbar navbar-inverse navbar-fixed-top">\n\t  \t\t<div class="container-fluid">\n\n\t\t        <div class="navbar-header">\n\t\t          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">\n\t\t            <span class="sr-only">Toggle navigation</span>\n\t\t            <span class="icon-bar"></span>\n\t\t            <span class="icon-bar"></span>\n\t\t            <span class="icon-bar"></span>\n\t\t          </button>\n\t\t          <a class="navbar-brand" href="#"></a>\n\t\t        </div>\n\n\t\t        <div id="navbar" class="navbar-collapse collapse">\n\n\t\t          <ul class="nav navbar-nav navbar-right">\n\t\t            <li><a href="#">Cerrar Sesi\xF3n</a></li>\n\t\t          </ul>\n\n\n\t\t        </div>\n\n\t\t      </div>\n\t    </nav>\n\t\t'
 		};
 }
 
@@ -47145,16 +47145,16 @@ module.exports = {
 'use strict';
 
 function sidebar() {
-		return {
-				controller: function controller() {},
+  return {
+    controller: function controller() {},
 
-				template: '\n\t\t<div class="col-sm-3 col-md-2 sidebar">\n          <ul class="nav nav-sidebar">\n            <li class="active">\n              <a href="#">Crear Incidencia \n                <span class="sr-only">(current)</span>\n              </a>\n            </li>\n          </ul>\n        </div>\n\t\t'
-		};
+    template: '\n\t\t<div class="col-sm-3 col-md-2 sidebar">\n          <ul class="nav nav-sidebar">\n            <li class="active">\n              <a href="/proyecto/#!/crear-incidencia">Crear Incidencia \n                <span class="sr-only">(current)</span>\n              </a>\n            </li>\n            <li class="">\n              <a href="/proyecto/#!/mostrar-incidencias-reporter/:reporterId\'">Listar Incidencia \n                <span class="sr-only">(current)</span>\n              </a>\n            </li>\n          </ul>\n         \n        </div>\n       \n\t\t'
+  };
 }
 
 module.exports = {
-		name: 'sidebar',
-		func: sidebar
+  name: 'sidebar',
+  func: sidebar
 };
 
 },{}],22:[function(require,module,exports){
@@ -47306,7 +47306,7 @@ function crearIncidencia($stateProvider) {
 				console.log('seProdujoUnErrorAqui');
 			}
 		},
-		template: '\n\t\t<main-layout title="{{\'Crear Incidencia\'}}">\n\t\t\t\n\t\t\t<div class="row">\n\t   \t\t\t<div class="col-xs-6">\n\t   \t\t\t\t<div class="panel panel-default">\n\t\t\t\t\t  <div class="panel-body">\n\t\t\t\t\t  \t<create-inicidencia-form \n\t\t\t\t\t  \t\ton-submit="createIncidencia(dataForm)">\n\t\t\t\t\t  \t</create-inicidencia-form>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t   \t\t\t</div>\n\t   \t\t</div>\n\n\t\t</main-layout>\n\n\t\t'
+		template: '\n\t\t<main-layout title="{{\'Crear Incidencia\'}}">\n\t\t\t\n\t\t\t<div class="row">\n\t   \t\t\t<div class="col-xs-6 col-xs-offset-2">\n\t   \t\t\t\t<div class="panel panel-default">\n\t\t\t\t\t  <div class="panel-body">\n\t\t\t\t\t  \t<create-inicidencia-form \n\t\t\t\t\t  \t\ton-submit="createIncidencia(dataForm)">\n\t\t\t\t\t  \t</create-inicidencia-form>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t   \t\t\t</div>\n\t   \t\t</div>\n\n\t\t</main-layout>\n\n\t\t'
 
 	});
 }
@@ -47325,7 +47325,7 @@ function initial($stateProvider) {
 				console.log(formData);
 			};
 		},
-		template: '\n\t\t<style>\n\t\t\t.container {\n\t\t\t\tmargin-top: 50px;\n\t\t\t}\n\t\t</style>\n\t\t<div class="container">\n\t\t\t<div class="row">\n\t\t\t\t<div class="col-xs-6 col-xs-offset-3">\n\t\t\t\t\t<div class="panel panel-default">\n\t\t\t\t\t  \t<div class="panel-body">\n\t\t\t\t\t    \t<login-form on-submit="onSubmitLoginForm(formData)"></login-form>\n\t\t\t\t\t  \t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t'
+		template: '\n\t\t<style>\n\t\t\t.container {\n\t\t\t\tmargin-top: 50px;\n\n\t\t\t}\n\t\t\t.logo \n\t\t\t{\n\t\t\t  margin-left: 20%;\n              margin-bottom: 40px;\n\t\t\t}\n\n\t\t</style>\n\n\t\t<div class="container">\n\t\t\t<div class="row">\n\t\t\t\t<div class="col-xs-6 col-xs-offset-3">\n\t\t\t\t<div class="logo">\n\t\t\t\t<img src="./dist/images/logos.png" alt="Smiley face" height="150" width="300">\n\t\t\t\t</div>\n\t\t\t\t\t<div class="panel panel-default">\n\t\t\t\t\t  \t<div class="panel-body">\n\t\t\t\t\t    \t<login-form on-submit="onSubmitLoginForm(formData)"></login-form>\n\t\t\t\t\t  \t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t'
 	});
 }
 
@@ -47346,7 +47346,7 @@ function mostrarDetallesIncidencia($stateProvider) {
 		controller: function controller($scope, incidencia) {
 			$scope.incidencia = incidencia;
 		},
-		template: '\n\t\t<main-layout title="{{\'Ver Incidencia\'}}">\n\t\t\t\n\t\t\t<div class="row">\n\t   \t\t\t<div class="col-xs-6">\n\t   \t\t\t\t<div class="panel panel-default">\n\t\t\t\t\t\t<div class="panel-body">\n\t\t\t\t\t  \t\t<mostrar-detalle-incidencia-form \n\t\t\t\t\t  \t\t\tincidencia="incidencia">\n\t\t\t\t\t  \t\t</mostrar-detalle-incidencia-form>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t   \t\t\t</div>\n\t   \t\t</div>\n\n\t\t</main-layout>\n\t\t'
+		template: '\n\t\t<main-layout title="{{\'Ver Incidencia\'}}">\n\t\t\t\n\t\t\t<div class="row">\n\t   \t\t\t<div class="col-xs-6 col-xs-offset-2">\n\t   \t\t\t\t<div class="panel panel-default">\n\t\t\t\t\t\t<div class="panel-body">\n\t\t\t\t\t  \t\t<mostrar-detalle-incidencia-form \n\t\t\t\t\t  \t\t\tincidencia="incidencia">\n\t\t\t\t\t  \t\t</mostrar-detalle-incidencia-form>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t   \t\t\t</div>\n\t   \t\t</div>\n\n\t\t</main-layout>\n\t\t'
 	});
 }
 
@@ -47388,7 +47388,7 @@ function mostrarIncidenciasReporter($stateProvider) {
 				$scope.incidencias = addFechaToCollecionIncidencia(response.data);
 			}
 		},
-		template: '\n\t\t<main-layout title="{{\'Mis Incidecias\'}}">\n\n\t\t\t<div class="row">\n\t\t\t\t<div class="col-xs-12">\n\t\t\t\t\t<div class="pull-right">\n\t\t\t\t\t\t<div class="btn-group" role="group" aria-label="...">\n\t\t\t\t  \t\t\t<button \n\t\t\t\t  \t\t\t\ttype="button" \n\t\t\t\t  \t\t\t\tclass="btn btn-default" \n\t\t\t\t  \t\t\t\tng-click="getByStatusName(\'ddd\')">En Espera\n\t\t\t  \t\t\t\t</button>\n\t\t\t\t  \t\t\t<button \n\t\t\t\t  \t\t\t\ttype="button" \n\t\t\t\t  \t\t\t\tclass="btn btn-default" \n\t\t\t\t  \t\t\t\tng-click="getByStatusName(\'rr\')">En Ejecucion\n\t\t\t  \t\t\t\t</button>\n\t\t\t\t  \t\t\t<button \n\t\t\t\t  \t\t\t\ttype="button" \n\t\t\t\t  \t\t\t\tclass="btn btn-default" \n\t\t\t\t  \t\t\t\tng-click="getByStatusName(\'hh\')">Terminadas\n\t\t\t  \t\t\t\t</button>\n\t\t\t\t  \t\t\t<button \n\t\t\t\t  \t\t\t\ttype="button" \n\t\t\t\t  \t\t\t\tclass="btn btn-default" \n\t\t\t\t  \t\t\t\tng-click="getByStatusName(\'\xF1\xF1\')">Aprobadas\n\t\t\t  \t\t\t\t</button>\n\t\t\t\t  \t\t\t<button \n\t\t\t\t  \t\t\t\ttype="button" \n\t\t\t\t  \t\t\t\tclass="btn btn-default" \n\t\t\t\t  \t\t\t\tng-click="getByStatusName(\'ee\')">Reprobadas\n\t\t\t  \t\t\t\t</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class="row" style="margin-top: 15px;">\n\n\t\t\t\t<div class="col-xs-12">\n\n\t\t\t\t\t<incidencia-item ng-repeat="incidencia in incidencias track by incidencia.id"\n\t\t\t\t\t\ttitulo="{{incidencia.titulo}}"\n\t\t\t\t\t\tincidencia-id="{{incidencia.id}}"\n\t\t\t\t\t\thide-remove-button="false"\n\t\t\t\t\t\thide-show-button="false"\n\t\t\t\t\t\tfecha-contenido="{{incidencia.fecha.contenido}}"\n\t\t\t\t\t\tfecha-label="{{incidencia.fecha.label}}"\n\t\t\t\t\t\ton-remove="removeIncidencia(incidenciaInput)"\n\t\t\t\t\t\ton-show="transitionToMostrarDetallesIncidencia(incidenciaInput)">\n\t\t\t\t\t</incidencia-item>\n\t\t\t\t\t\n\t\t\t\t</div>\n\n\t\t\t</div>\n\n\t\t</main-layout>\n\t\t'
+		template: '\n\t\t<main-layout title="{{\'Mis Incidencias\'}}">\n\n\t\t\t<div class="row">\n\t\t\t\t<div class="col-xs-12">\n\t\t\t\t\t<div class="pull-right">\n\t\t\t\t\t\t<div class="btn-group" role="group" aria-label="...">\n\t\t\t\t  \t\t\t<button \n\t\t\t\t  \t\t\t\ttype="button" \n\t\t\t\t  \t\t\t\tclass="btn btn-default" \n\t\t\t\t  \t\t\t\tng-click="getByStatusName(\'ddd\')">En Espera\n\t\t\t  \t\t\t\t</button>\n\t\t\t\t  \t\t\t<button \n\t\t\t\t  \t\t\t\ttype="button" \n\t\t\t\t  \t\t\t\tclass="btn btn-default" \n\t\t\t\t  \t\t\t\tng-click="getByStatusName(\'rr\')">Asignadas\n\t\t\t  \t\t\t\t</button>\n\t\t\t\t  \t\t\t<button \n\t\t\t\t  \t\t\t\ttype="button" \n\t\t\t\t  \t\t\t\tclass="btn btn-default" \n\t\t\t\t  \t\t\t\tng-click="getByStatusName(\'hh\')">Terminadas\n\t\t\t  \t\t\t\t</button>\n\t\t\t\t  \t\t\t<button \n\t\t\t\t  \t\t\t\ttype="button" \n\t\t\t\t  \t\t\t\tclass="btn btn-default" \n\t\t\t\t  \t\t\t\tng-click="getByStatusName(\'\xF1\xF1\')">Aprobadas\n\t\t\t  \t\t\t\t</button>\n\t\t\t\t  \t\t\t<button \n\t\t\t\t  \t\t\t\ttype="button" \n\t\t\t\t  \t\t\t\tclass="btn btn-default" \n\t\t\t\t  \t\t\t\tng-click="getByStatusName(\'ee\')">Reprobadas\n\t\t\t  \t\t\t\t</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class="row" style="margin-top: 15px;">\n\n\t\t\t\t<div class="col-xs-12">\n\n\t\t\t\t\t<incidencia-item ng-repeat="incidencia in incidencias track by incidencia.id"\n\t\t\t\t\t\ttitulo="{{incidencia.titulo}}"\n\t\t\t\t\t\tincidencia-id="{{incidencia.id}}"\n\t\t\t\t\t\thide-remove-button="false"\n\t\t\t\t\t\thide-show-button="false"\n\t\t\t\t\t\tfecha-contenido="{{incidencia.fecha.contenido}}"\n\t\t\t\t\t\tfecha-label="{{incidencia.fecha.label}}"\n\t\t\t\t\t\ton-remove="removeIncidencia(incidenciaInput)"\n\t\t\t\t\t\ton-show="transitionToMostrarDetallesIncidencia(incidenciaInput)">\n\t\t\t\t\t</incidencia-item>\n\t\t\t\t\t\n\t\t\t\t</div>\n\n\t\t\t</div>\n\n\t\t</main-layout>\n\t\t'
 	});
 }
 

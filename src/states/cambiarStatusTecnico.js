@@ -1,7 +1,7 @@
 function mostrarDetallesIncidencia($stateProvider) {
 
-	$stateProvider.state('mostrarDetallesIncidencia', {
-		url: '/mostrar-detalles-incidencia/:incidenciaId',
+	$stateProvider.state('cambiarEstatusDetallesIncidencia', {
+		url: '/cambiar-estatus-detalles-incidencia/:incidenciaId',
 		resolve: {
 			incidencia: function() {
 				return require('./../api/incidencias')[0];
@@ -11,7 +11,7 @@ function mostrarDetallesIncidencia($stateProvider) {
 			$scope.incidencia = incidencia;
 		},
 		template: `
-		<main-layout title="{{'Ver Incidencia'}}">
+		<main-layout title="{{'Cambiar Estatus Incidencia'}}">
 			
 			<div class="row">
 	   			<div class="col-xs-6 col-xs-offset-2">

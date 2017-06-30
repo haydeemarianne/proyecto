@@ -35,7 +35,7 @@ function mostrarIncidenciasReporter($stateProvider) {
 
 		},
 		template: `
-		<main-layout title="{{'Mis Incidecias'}}">
+		<main-layout title="{{'Mis Incidencias'}}">
 
 			<div class="row">
 				<div class="col-xs-12">
@@ -49,7 +49,7 @@ function mostrarIncidenciasReporter($stateProvider) {
 				  			<button 
 				  				type="button" 
 				  				class="btn btn-default" 
-				  				ng-click="getByStatusName('rr')">En Ejecucion
+				  				ng-click="getByStatusName('rr')">Asignadas
 			  				</button>
 				  			<button 
 				  				type="button" 

@@ -28,7 +28,7 @@ function crearIncidencia($stateProvider) {
 		<main-layout title="{{'Crear Incidencia'}}">
 			
 			<div class="row">
-	   			<div class="col-xs-6">
+	   			<div class="col-xs-6 col-xs-offset-2">
 	   				<div class="panel panel-default">
 					  <div class="panel-body">
 					  	<create-inicidencia-form 

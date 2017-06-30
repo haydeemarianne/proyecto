@@ -14,13 +14,13 @@ function navbar() {
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		          </button>
-		          <a class="navbar-brand" href="#">Helpdesk</a>
+		          <a class="navbar-brand" href="#"></a>
 		        </div>
 
 		        <div id="navbar" class="navbar-collapse collapse">
 
 		          <ul class="nav navbar-nav navbar-right">
-		            <li><a href="#">Logout</a></li>
+		            <li><a href="#">Cerrar Sesión</a></li>
 		          </ul>
 
 

@@ -115,7 +115,7 @@ function mostrarDetalleIncidenciaForm() {
 			  	<div class="form-group">
 				    <label>Status:</label><br/>
 				    <span class="label label-primary">
-				    	{{incidencia.status.name}}
+				    	
 				    </span>
 			  	</div>
 			</div>
